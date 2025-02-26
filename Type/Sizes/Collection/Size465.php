@@ -29,7 +29,7 @@ use BaksDev\Reference\Clothing\Type\Sizes\Collection\SizeClothingInterface;
 use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 
 #[AutoconfigureTag('baks.size.clothing')]
-final class Size implements SizeClothingInterface
+final class Size465 implements SizeClothingInterface
 {
     public const string SIZE = '46.5';
 
