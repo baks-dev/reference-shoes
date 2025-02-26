@@ -27,13 +27,12 @@ namespace BaksDev\Reference\Shoes\Type;
 
 use BaksDev\Reference\Shoes\Type\Sizes\SizeShoesInterface;
 
-/** Размер одежды (2XS ... 4XL) */
+/** Размер обуви  */
 final class SizeShoes
 {
     public const string TYPE = 'size_shoes_type';
 
     private ?SizeShoesInterface $size = null;
-
 
     public function __construct(self|string|SizeShoesInterface $size)
     {
@@ -59,7 +58,6 @@ final class SizeShoes
                 }
             }
         }
-
     }
 
 

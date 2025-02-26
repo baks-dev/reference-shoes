@@ -52,7 +52,7 @@ final class ReferenceChoiceSizeShoes implements FieldsChoiceInterface, Reference
 
     public function domain(): string
     {
-        return 'reference.size.shoes';
+        return 'size_shoes_type';
     }
 
 

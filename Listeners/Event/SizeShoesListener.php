@@ -37,16 +37,9 @@ use Symfony\Component\HttpKernel\Event\ControllerEvent;
  */
 #[AsEventListener(event: ControllerEvent::class)]
 #[AsEventListener(event: ConsoleEvents::COMMAND)]
-final class SizeShoesListener
+final readonly class SizeShoesListener
 {
-    private SizeShoesCollection $collection;
-
-
-    public function __construct(SizeShoesCollection $collection)
-    {
-        $this->collection = $collection;
-    }
-
+    public function __construct(private SizeShoesCollection $collection) {}
 
     public function onKernelController(ControllerEvent $event): void
     {
@@ -56,7 +49,6 @@ final class SizeShoesListener
             $this->collection->cases();
         }
     }
-
 
     public function onConsoleCommand(ConsoleCommandEvent $event): void
     {

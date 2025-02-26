@@ -23,13 +23,13 @@
 
 declare(strict_types=1);
 
-namespace BaksDev\Reference\Shoes\Type\Sizes\Child;
+namespace BaksDev\Reference\Shoes\Type\Sizes\Collection;
 
-use BaksDev\Reference\Clothing\Type\Sizes\Collection\SizeClothingInterface;
+use BaksDev\Reference\Shoes\Type\Sizes\SizeShoesInterface;
 use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 
-#[AutoconfigureTag('baks.size.clothing')]
-final class Size36 implements SizeClothingInterface
+#[AutoconfigureTag('baks.size.shoes')]
+final class Size36 implements SizeShoesInterface
 {
     public const string SIZE = '36';
 

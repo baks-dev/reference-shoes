@@ -32,7 +32,7 @@ final class SizeShoesCollection
     private iterable $sizes;
 
     public function __construct(
-        #[AutowireIterator('baks.size.shoes', defaultPriorityMethod: 'sort')] iterable $sizes,
+        #[AutowireIterator('baks.size.shoes', defaultPriorityMethod: 'priority')] iterable $sizes,
     )
     {
         $this->sizes = $sizes;
@@ -43,10 +43,14 @@ final class SizeShoesCollection
     {
         $case = null;
 
+        /** @var SizeShoesInterface $size */
+
         foreach($this->sizes as $size)
         {
-            $case[] = new $size();
+            $case[$size::priority().$size::SIZE] = new $size();
         }
+
+        ksort($case);
 
         return $case;
     }
