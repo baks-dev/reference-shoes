@@ -31,7 +31,6 @@ final class SizeShoesCollection
 {
     private iterable $sizes;
 
-
     public function __construct(
         #[AutowireIterator('baks.size.shoes', defaultPriorityMethod: 'sort')] iterable $sizes,
     )
@@ -39,9 +38,8 @@ final class SizeShoesCollection
         $this->sizes = $sizes;
     }
 
-
     /** Возвращает массив из значений SizeShoesInterface */
-    public function cases(): array
+    public function cases(): ?array
     {
         $case = null;
 
