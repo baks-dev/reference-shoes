@@ -38,6 +38,8 @@ interface SizeShoesInterface
 
     public const string UK = '';
 
+    public function __toString(): string;
+
     /**
      * Возвращает значение (value)
      */

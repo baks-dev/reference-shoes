@@ -42,6 +42,11 @@ final class Size52 implements SizeShoesInterface
 
     public const string UK = '15';
 
+    public function __toString(): string
+    {
+        return $this->getValue();
+    }
+
     /**
      * Возвращает значение (value)
      */
