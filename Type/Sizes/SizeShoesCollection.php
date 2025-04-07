@@ -25,6 +25,7 @@ declare(strict_types=1);
 
 namespace BaksDev\Reference\Shoes\Type\Sizes;
 
+use BaksDev\Reference\Shoes\Type\SizeShoes;
 use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
 
 final class SizeShoesCollection
@@ -47,7 +48,7 @@ final class SizeShoesCollection
 
         foreach($this->sizes as $size)
         {
-            $case[$size::priority().$size::SIZE] = new $size();
+            $case[$size::priority().$size::SIZE] = new SizeShoes($size)();
         }
 
         ksort($case);

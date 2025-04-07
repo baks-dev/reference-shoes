@@ -26,7 +26,7 @@ declare(strict_types=1);
 namespace BaksDev\Reference\Shoes\Form;
 
 use BaksDev\Reference\Shoes\Type\Sizes\SizeShoesCollection;
-use BaksDev\Reference\Shoes\Type\Sizes\SizeShoesInterface;
+use BaksDev\Reference\Shoes\Type\SizeShoes;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -34,7 +34,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class ChoiceSizeShoesFieldForm extends AbstractType
 {
-
     public function __construct(
         private readonly ChoiceSizeShoesFieldTransformer $transformer,
         private readonly SizeShoesCollection $collection
@@ -50,11 +49,11 @@ final class ChoiceSizeShoesFieldForm extends AbstractType
     {
         $resolver->setDefaults([
             'choices' => $this->collection->cases(),
-            'choice_value' => function(?SizeShoesInterface $size) {
-                return $size?->getValue();
+            'choice_value' => function(?SizeShoes $size) {
+                return $size?->getSizeValue();
             },
-            'choice_label' => function(SizeShoesInterface $size) {
-                return $size->getValue();
+            'choice_label' => function(SizeShoes $size) {
+                return $size->getSizeValue();
             },
             'translation_domain' => 'size_shoes_type',
             'placeholder' => 'placeholder',
