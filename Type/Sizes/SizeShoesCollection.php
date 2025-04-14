@@ -48,10 +48,10 @@ final class SizeShoesCollection
 
         foreach($this->sizes as $size)
         {
-            $case[$size::priority().$size::SIZE] = new SizeShoes($size)();
+            $case[$size::priority().$size::SIZE] = new SizeShoes($size::class);
         }
 
-        ksort($case);
+        empty($case) || ksort($case);
 
         return $case;
     }

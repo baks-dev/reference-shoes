@@ -36,6 +36,17 @@ final class SizeShoes
 
     public function __construct(self|string|SizeShoesInterface $size)
     {
+        if(is_string($size) && class_exists($size))
+        {
+            $instance = new $size();
+
+            if($instance instanceof SizeShoesInterface)
+            {
+                $this->size = $instance;
+                return;
+            }
+        }
+
         if($size instanceof SizeShoesInterface)
         {
             $this->size = $size;
