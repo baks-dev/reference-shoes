@@ -29,17 +29,33 @@ use BaksDev\Reference\Shoes\Type\Sizes\SizeShoesInterface;
 use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 
 #[AutoconfigureTag('baks.size.shoes')]
-final class Size36 implements SizeShoesInterface
+final class Size20 implements SizeShoesInterface
 {
-    public const string SIZE = '36';
+    public const string SIZE = '20';
 
-    public const string EUR = '36';
+    public const string EUR = '20';
 
-    public const string CENTIMETER = '23.3';
+    public const string CENTIMETER = '12.5';
 
-    public const string USA = '4.5';
+    public const string USA = '0';
 
-    public const string UK = '3.5';
+    public const string UK = '0';
+
+    /**
+     * Сортировка (чем меньше число - тем первым в итерации будет значение)
+     */
+    public static function priority(): int
+    {
+        return 20;
+    }
+
+    /**
+     * Проверяет, относится ли строка цвета к данному объекту
+     */
+    public static function equals(string $size): bool
+    {
+        return mb_strtolower(self::SIZE) === mb_strtolower($size);
+    }
 
     public function __toString(): string
     {
@@ -52,23 +68,5 @@ final class Size36 implements SizeShoesInterface
     public function getValue(): string
     {
         return self::SIZE;
-    }
-
-
-    /**
-     * Сортировка (чем меньше число - тем первым в итерации будет значение)
-     */
-    public static function priority(): int
-    {
-        return 36;
-    }
-
-
-    /**
-     * Проверяет, относится ли строка цвета к данному объекту
-     */
-    public static function equals(string $size): bool
-    {
-        return mb_strtolower(self::SIZE) === mb_strtolower($size);
     }
 }
