@@ -29,13 +29,13 @@ use BaksDev\Reference\Shoes\Type\Sizes\SizeShoesInterface;
 use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 
 #[AutoconfigureTag('baks.size.shoes')]
-final class Size20 implements SizeShoesInterface
+final class Size205 implements SizeShoesInterface
 {
-    public const string SIZE = '20';
+    public const string SIZE = '20.5';
 
-    public const string EUR = '20';
+    public const string EUR = '20.5';
 
-    public const string CENTIMETER = '12';
+    public const string CENTIMETER = '12.5';
 
     public const string USA = '0';
 
