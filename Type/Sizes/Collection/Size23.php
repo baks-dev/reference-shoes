@@ -37,9 +37,9 @@ final class Size23 implements SizeShoesInterface
 
     public const string CENTIMETER = '14.5';
 
-    public const string USA = '0';
+    public const string USA = '';
 
-    public const string UK = '0';
+    public const string UK = '';
 
     /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
@@ -50,7 +50,7 @@ final class Size23 implements SizeShoesInterface
     }
 
     /**
-     * Проверяет, относится ли строка цвета к данному объекту
+     * Проверяет, относится ли строка размера к данному объекту
      */
     public static function equals(string $size): bool
     {

@@ -35,11 +35,11 @@ final class Size29 implements SizeShoesInterface
 
     public const string EUR = '29';
 
-    public const string CENTIMETER = '18.5';
+    public const string CENTIMETER = '19.5';
 
     public const string USA = '12';
 
-    public const string UK = '0';
+    public const string UK = '';
 
     /**
      * Сортировка (чем меньше число - тем первым в итерации будет значение)
@@ -50,7 +50,7 @@ final class Size29 implements SizeShoesInterface
     }
 
     /**
-     * Проверяет, относится ли строка цвета к данному объекту
+     * Проверяет, относится ли строка размера к данному объекту
      */
     public static function equals(string $size): bool
     {

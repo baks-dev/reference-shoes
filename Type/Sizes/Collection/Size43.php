@@ -65,7 +65,7 @@ final class Size43 implements SizeShoesInterface
 
 
     /**
-     * Проверяет, относится ли строка цвета к данному объекту
+     * Проверяет, относится ли строка размера к данному объекту
      */
     public static function equals(string $size): bool
     {
