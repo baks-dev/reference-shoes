@@ -30,8 +30,9 @@ return static function(ContainerConfigurator $configurator) {
 
     $services = $configurator->services()
         ->defaults()
-        ->autowire(true)
-        ->autoconfigure(true);
+        ->autowire()
+        ->autoconfigure()
+        ->public();
 
 
     $NAMESPACE = BaksDevReferenceShoesBundle::NAMESPACE;
@@ -41,6 +42,7 @@ return static function(ContainerConfigurator $configurator) {
         ->exclude([
             $PATH.'{Entity,Resources,Type}',
             $PATH.'**'.DIRECTORY_SEPARATOR.'*Message.php',
+            $PATH.'**'.DIRECTORY_SEPARATOR.'*Result.php',
             $PATH.'**'.DIRECTORY_SEPARATOR.'*DTO.php',
             $PATH.'**'.DIRECTORY_SEPARATOR.'*Test.php',
         ]);
